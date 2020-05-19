@@ -7,6 +7,4 @@ public class Player {
         Validator.isValidName(name);
         this.name = name;
     }
-
-
 }
