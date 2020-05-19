@@ -14,6 +14,10 @@ public class PlayerRepository {
         return target.equals(players);
     }
 
+    public int getNumberOfPlayers() {
+        return players.size();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
