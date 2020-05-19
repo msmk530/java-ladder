@@ -10,4 +10,8 @@ public class ResultItems {
 
         this.items = items;
     }
+
+    public boolean checkItems(List<String> target){
+        return items.equals(target);
+    }
 }
