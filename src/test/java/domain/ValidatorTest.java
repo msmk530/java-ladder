@@ -2,6 +2,7 @@ package domain;
 
 import exception.Item.CountOfItemsException;
 import exception.Item.LengthOfItemException;
+import exception.Ladder.LengthOfHeightException;
 import exception.Player.LengthOfNameException;
 import org.junit.jupiter.api.Test;
 import util.ChangeStringToList;
@@ -12,6 +13,8 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ValidatorTest {
+    private static final int NON_NATURAL_NUMBER = 0;
+
     @Test
     void 참가자_이름_5글자_초과시_예외발생_테스트() {
         assertThatExceptionOfType(LengthOfNameException.class)
@@ -30,5 +33,11 @@ class ValidatorTest {
         assertThatExceptionOfType(LengthOfItemException.class)
                 .isThrownBy(() ->
                         Validator.checkResultItems(ChangeStringToList.changeStringToList(",two,three"), 3));
+    }
+
+    @Test
+    void 사다리_높이_예외발생_테스트() {
+        assertThatExceptionOfType(LengthOfHeightException.class)
+                .isThrownBy(() -> Validator.isValidHeight(NON_NATURAL_NUMBER));
     }
 }
