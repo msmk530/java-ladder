@@ -61,7 +61,6 @@ public class Ladder {
         return updateNumber;
     }
 
-
     public Line getLine(int point) {
         return ladder.get(point);
     }

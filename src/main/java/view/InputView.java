@@ -26,7 +26,7 @@ public class InputView {
             List<String> names = ChangeStringToList.changeStringToList(SCANNER.nextLine());
 
             for (String name : names) {
-                players.add(new Player(name));
+                players.add(new Player(name, players));
             }
 
             return new PlayerRepository(players);
