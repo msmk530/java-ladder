@@ -16,6 +16,5 @@ public class LadderGame {
 
         LadderResult ladderResult = new LadderResult(playerRepository, ladder);
 
-
     }
 }
