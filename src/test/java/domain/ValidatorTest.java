@@ -3,11 +3,14 @@ package domain;
 import exception.Item.CountOfItemsException;
 import exception.Item.LengthOfItemException;
 import exception.Ladder.LengthOfHeightException;
+import exception.Player.DuplicateNameOfPlayerException;
 import exception.Player.LengthOfNameException;
 import org.junit.jupiter.api.Test;
 import util.ChangeStringToList;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.junit.jupiter.api.Assertions.*;
@@ -19,6 +22,15 @@ class ValidatorTest {
     void 참가자_이름_5글자_초과시_예외발생_테스트() {
         assertThatExceptionOfType(LengthOfNameException.class)
                 .isThrownBy(() -> Validator.isValidName("kimminsub"));
+    }
+
+    @Test
+    void 참가자_이름_중복_테스트(){
+        List<Player> players = new ArrayList<>();
+        players.add(new Player("kim"));
+
+        assertThatExceptionOfType(DuplicateNameOfPlayerException.class)
+                .isThrownBy(()-> Validator.isUniquePlayer(players,new Player("kim")));
     }
 
     @Test
