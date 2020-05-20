@@ -2,6 +2,7 @@ package domain;
 
 import exception.Item.CountOfItemsException;
 import exception.Item.LengthOfItemException;
+import exception.Ladder.LengthOfHeightException;
 import exception.Player.LengthOfNameException;
 
 import java.util.List;
@@ -29,12 +30,17 @@ public class Validator {
         for (String item : items) {
             checkItemLength(item);
         }
-
     }
 
     private static void checkItemLength(String item) {
         if (item.length() < MIN_LENGTH_OF_ITEM) {
             throw new LengthOfItemException();
+        }
+    }
+
+    public static void isValidHeight(int height) {
+        if (height < 1) {
+            throw new LengthOfHeightException();
         }
     }
 }
