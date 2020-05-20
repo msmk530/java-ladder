@@ -1,9 +1,6 @@
 package controller;
 
-import domain.Ladder;
-import domain.LadderCreator;
-import domain.PlayerRepository;
-import domain.ResultItems;
+import domain.*;
 import view.InputView;
 import view.OutputView;
 
@@ -15,6 +12,10 @@ public class LadderGame {
 
         Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight);
 
-        OutputView.printLadder(playerRepository,ladder,resultItems);
+        OutputView.printLadder(playerRepository, ladder, resultItems);
+
+        LadderResult ladderResult = new LadderResult(playerRepository, ladder);
+
+
     }
 }

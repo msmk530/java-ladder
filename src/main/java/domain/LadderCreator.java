@@ -7,7 +7,6 @@ import java.util.List;
 
 public class LadderCreator {
 
-
     public static Ladder createLadder(PlayerRepository playerRepository, int ladderHeight) {
         List<Line> ladder = new ArrayList<>();
 
