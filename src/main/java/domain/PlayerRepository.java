@@ -11,10 +11,6 @@ public class PlayerRepository {
         players.add(player);
     }
 
-    public boolean checkPlayers(List<Player> target) {
-        return target.equals(players);
-    }
-
     public int getNumberOfPlayers() {
         return players.size();
     }

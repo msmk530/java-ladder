@@ -1,26 +1,16 @@
 package domain;
 
 import org.junit.jupiter.api.Test;
-import util.ChangeStringToList;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
 class PlayerRepositoryTest {
     @Test
-    void 생성자_테스트() {
-        String names = "kim,min,sub";
-        List<String> playersName = ChangeStringToList.changeStringToList(names);
-        List<Player> players = new ArrayList<>();
+    void 참가자_추가_테스트() {
+        PlayerRepository playerRepository = new PlayerRepository();
 
-        for (String player : playersName) {
-            players.add(new Player(player));
-        }
+        playerRepository.addPlayer(new Player("kim"));
 
-        PlayerRepository playerRepository = new PlayerRepository(players);
-        assertThat(playerRepository.checkPlayers(players)).isTrue();
+        assertThat(playerRepository.getPlayers().get(0).getName().equals("kim")).isTrue();
     }
-
 }
