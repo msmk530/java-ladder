@@ -12,11 +12,11 @@ public class ResultItems {
         this.items = items;
     }
 
-    public boolean checkItems(List<String> target){
+    public boolean checkItems(List<String> target) {
         return items.equals(target);
     }
 
-    public List<String> getItems(){
+    public List<String> getItems() {
         return Collections.unmodifiableList(items);
     }
 }

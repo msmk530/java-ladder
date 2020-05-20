@@ -1,13 +1,14 @@
 package domain;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class PlayerRepository {
-    private final List<Player> players;
+    private final List<Player> players = new ArrayList<>();
 
-    public PlayerRepository(List<Player> players) {
-        this.players = players;
+    public void addPlayer(Player player) {
+        Validator.isUniquePlayer(players, player);
+        players.add(player);
     }
 
     public boolean checkPlayers(List<Player> target) {
@@ -18,7 +19,7 @@ public class PlayerRepository {
         return players.size();
     }
 
-    public List<Player> getPlayers(){
+    public List<Player> getPlayers() {
         return players;
     }
 }

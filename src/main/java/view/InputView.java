@@ -6,7 +6,6 @@ import domain.ResultItems;
 import domain.Validator;
 import util.ChangeStringToList;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,14 +21,14 @@ public class InputView {
     public static PlayerRepository inputPlayersName() {
         try {
             printMessage(DEMAND_NAMES);
-            List<Player> players = new ArrayList<>();
             List<String> names = ChangeStringToList.changeStringToList(SCANNER.nextLine());
+            PlayerRepository playerRepository = new PlayerRepository();
 
             for (String name : names) {
-                players.add(new Player(name, players));
+                playerRepository.addPlayer(new Player(name));
             }
 
-            return new PlayerRepository(players);
+            return playerRepository;
         } catch (Exception e) {
             printErrorMessage(e.getMessage());
             return inputPlayersName();
