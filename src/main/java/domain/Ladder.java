@@ -8,4 +8,12 @@ public class Ladder {
     public Ladder(List<Line> ladder) {
         this.ladder = ladder;
     }
+
+    public Line getLine(int point){
+        return ladder.get(point);
+    }
+
+    public int getHeight(){
+        return ladder.size();
+    }
 }

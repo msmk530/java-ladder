@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ResultItems {
@@ -13,5 +14,9 @@ public class ResultItems {
 
     public boolean checkItems(List<String> target){
         return items.equals(target);
+    }
+
+    public List<String> getItems(){
+        return Collections.unmodifiableList(items);
     }
 }

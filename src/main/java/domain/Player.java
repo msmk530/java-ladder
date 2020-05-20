@@ -7,4 +7,8 @@ public class Player {
         Validator.isValidName(name);
         this.name = name;
     }
+
+    public String getName(){
+        return name;
+    }
 }

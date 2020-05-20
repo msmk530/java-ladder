@@ -5,6 +5,7 @@ import domain.LadderCreator;
 import domain.PlayerRepository;
 import domain.ResultItems;
 import view.InputView;
+import view.OutputView;
 
 public class LadderGame {
     public void run() {
@@ -14,5 +15,6 @@ public class LadderGame {
 
         Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight);
 
+        OutputView.printLadder(playerRepository,ladder,resultItems);
     }
 }

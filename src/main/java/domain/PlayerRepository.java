@@ -18,4 +18,7 @@ public class PlayerRepository {
         return players.size();
     }
 
+    public List<Player> getPlayers(){
+        return players;
+    }
 }
