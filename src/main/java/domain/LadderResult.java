@@ -1,9 +1,6 @@
 package domain;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class LadderResult {
     private static final int START_POINT = 0;
@@ -18,7 +15,7 @@ public class LadderResult {
 
     private Map<String, Integer> matchPlayerToItem(PlayerRepository playerRepository, List<Integer> matchedItems) {
         int point = START_POINT;
-        Map<String, Integer> result = new HashMap<>();
+        Map<String, Integer> result = new LinkedHashMap<>();
         List<Player> players = playerRepository.getPlayers();
 
         for (Player player : players) {
@@ -29,7 +26,7 @@ public class LadderResult {
         return result;
     }
 
-    public Map<String, Integer> getGameResult(){
+    public Map<String, Integer> getGameResult() {
         return Collections.unmodifiableMap(gameResult);
     }
 }

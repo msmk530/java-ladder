@@ -3,9 +3,11 @@ package domain;
 import exception.Item.CountOfItemsException;
 import exception.Item.LengthOfItemException;
 import exception.Ladder.LengthOfHeightException;
+import exception.Ladder.SearchTargetException;
 import exception.Player.DuplicateNameOfPlayerException;
 import exception.Player.LengthOfNameException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Validator {
@@ -50,6 +52,18 @@ public class Validator {
     public static void isValidHeight(int height) {
         if (height < 1) {
             throw new LengthOfHeightException();
+        }
+    }
+
+    public static void isValidSearchTarget(String searchTarget, PlayerRepository playerRepository) {
+        List<String> names = new ArrayList<>();
+
+        for (Player player : playerRepository.getPlayers()) {
+            names.add(player.getName());
+        }
+
+        if (!names.contains(searchTarget)) {
+            throw new SearchTargetException();
         }
     }
 }

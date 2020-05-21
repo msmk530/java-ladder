@@ -17,5 +17,11 @@ public class LadderGame {
 
         LadderResult ladderResult = new LadderResult(playerRepository, ladder);
 
+        String searchName;
+
+        do {
+            searchName = InputView.inputSearchTarget(playerRepository);
+            OutputView.printTargetResult(searchName,ladderResult,resultItems);
+        } while (!searchName.equals("all"));
     }
 }

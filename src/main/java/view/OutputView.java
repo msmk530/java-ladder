@@ -3,6 +3,7 @@ package view;
 import domain.*;
 
 import java.util.List;
+import java.util.Map;
 
 public class OutputView {
     private static final String HORIZON_LINE = "-----";
@@ -58,5 +59,24 @@ public class OutputView {
         }
 
         System.out.println();
+    }
+
+    public static void printTargetResult(String searchName, LadderResult ladderResult, ResultItems resultItems) {
+        if (searchName.equals("all")) {
+            printAllResult(ladderResult, resultItems);
+        } else {
+            Map<String, Integer> result = ladderResult.getGameResult();
+            int resultItemNumber = result.get(searchName);
+
+            System.out.println(searchName + " : " + resultItems.getItems().get(resultItemNumber));
+        }
+    }
+
+    private static void printAllResult(LadderResult ladderResult, ResultItems resultItems) {
+        Map<String, Integer> result = ladderResult.getGameResult();
+
+        for (String name : result.keySet()) {
+            System.out.println(name + " : " + resultItems.getItems().get(result.get(name)));
+        }
     }
 }
