@@ -6,6 +6,8 @@ import view.InputView;
 import view.OutputView;
 
 public class LadderGame {
+    private static final String ALL_RESULT = "all";
+
     public void run() {
         PlayerRepository playerRepository = InputView.inputPlayersName();
         ResultItems resultItems = InputView.inputResultItems(playerRepository.getNumberOfPlayers());
@@ -22,6 +24,6 @@ public class LadderGame {
         do {
             searchName = InputView.inputSearchTarget(playerRepository);
             OutputView.printTargetResult(searchName,ladderResult,resultItems);
-        } while (!searchName.equals("all"));
+        } while (!searchName.equals(ALL_RESULT));
     }
 }

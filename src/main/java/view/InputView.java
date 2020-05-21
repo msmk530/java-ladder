@@ -17,6 +17,7 @@ public class InputView {
     private static final String DEMAND_RESULT_ITEMS = "실행 결과를 입력하세요. (결과는 쉼표로 구분)";
     private static final String DEMAND_LADDER_HEIGHT = "최대 사다리 높이를 입력해주세요.";
     private static final String DEMAND_SEARCH_TARGET = "결과를 보고 싶은사람을 입력하시오.";
+    private static final String ALL_RESULT = "all";
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
@@ -65,7 +66,7 @@ public class InputView {
             printMessage(DEMAND_SEARCH_TARGET);
             String searchTarget = SCANNER.next();
 
-            if (!searchTarget.equals("all")) {
+            if (!searchTarget.equals(ALL_RESULT)) {
                 Validator.isValidSearchTarget(searchTarget, playerRepository);
             }
 

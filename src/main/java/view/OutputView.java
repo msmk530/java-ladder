@@ -6,9 +6,11 @@ import java.util.List;
 import java.util.Map;
 
 public class OutputView {
+    private static final String GAME_REULST = "사다리 결과";
     private static final String HORIZON_LINE = "-----";
     private static final String VERTICAL_LINE = "|";
     private static final String SPACE = "     ";
+    private static final String ALL_RESULT = "all";
 
     public static void printMessage(String message) {
         System.out.println(message);
@@ -19,7 +21,7 @@ public class OutputView {
     }
 
     public static void printLadder(PlayerRepository playerRepository, Ladder ladder, ResultItems resultItems) {
-        printMessage("사다리 결과");
+        printMessage(GAME_REULST);
         printPlayers(playerRepository);
         printLadder(ladder);
         printResultItmes(resultItems);
@@ -62,7 +64,7 @@ public class OutputView {
     }
 
     public static void printTargetResult(String searchName, LadderResult ladderResult, ResultItems resultItems) {
-        if (searchName.equals("all")) {
+        if (searchName.equals(ALL_RESULT)) {
             printAllResult(ladderResult, resultItems);
         } else {
             Map<String, Integer> result = ladderResult.getGameResult();
