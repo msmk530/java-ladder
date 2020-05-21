@@ -1,16 +1,39 @@
 package domain;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.assertj.core.api.Assertions.*;
 
 class LadderTest {
+    private Ladder ladder;
+    private Line line;
+
+    @BeforeEach
+    void setUp() {
+        List<Line> lines = new ArrayList<>();
+
+        line = new Line(Arrays.asList(true, false));
+        lines.add(line);
+        ladder = new Ladder(lines);
+    }
+
     @Test
-    void playLadderGame() {
-        //given
+    void 생성자_테스트() {
+        assertThat(ladder.getLine(0).equals(line)).isTrue();
+    }
 
-        //when
+    @Test
+    void 사다리게임_진행_테스트() {
+        PlayerRepository playerRepository = new PlayerRepository();
 
-        //then
+        playerRepository.addPlayer(new Player("one"));
+        playerRepository.addPlayer(new Player("two"));
+
+        assertThat(ladder.playLadderGame(playerRepository).equals(Arrays.asList(1, 0))).isTrue();
     }
 }

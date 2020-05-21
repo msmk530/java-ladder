@@ -24,6 +24,7 @@ public class LadderResult {
             result = player.matchItem(result, matchedItems, point);
             point++;
         }
+
         return result;
     }
 }
