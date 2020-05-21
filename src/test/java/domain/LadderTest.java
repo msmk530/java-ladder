@@ -11,11 +11,11 @@ import static org.assertj.core.api.Assertions.*;
 
 class LadderTest {
     private Ladder ladder;
-    private Line line;
 
     @BeforeEach
     void setUp() {
         List<Line> lines = new ArrayList<>();
+        Line line;
 
         line = new Line(Arrays.asList(true, false));
         lines.add(line);
@@ -24,6 +24,7 @@ class LadderTest {
 
     @Test
     void 생성자_테스트() {
+        Line line = new Line(Arrays.asList(true,false));
         assertThat(ladder.getLine(0).equals(line)).isTrue();
     }
 
