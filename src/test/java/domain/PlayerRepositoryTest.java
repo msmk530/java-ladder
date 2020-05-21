@@ -11,6 +11,6 @@ class PlayerRepositoryTest {
 
         playerRepository.addPlayer(new Player("kim"));
 
-        assertThat(playerRepository.getPlayers().get(0).getName().equals("kim")).isTrue();
+        assertThat(playerRepository.getPlayers().get(0).equals(new Player("kim"))).isTrue();
     }
 }
