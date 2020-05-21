@@ -1,39 +1,40 @@
 package domain;
 
-import util.RandomBooleanGenerator;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class LadderCreator {
+    private LadderCreator() {
+        throw new AssertionError();
+    }
 
-    public static Ladder createLadder(PlayerRepository playerRepository, int ladderHeight) {
+    public static Ladder createLadder(PlayerRepository playerRepository, int ladderHeight, LadderCreatorStrategy strategy) {
         List<Line> ladder = new ArrayList<>();
 
         for (int i = 0; i < ladderHeight; i++) {
-            ladder.add(new Line(createOneLine(playerRepository.getNumberOfPlayers())));
+            ladder.add(new Line(createOneLine(playerRepository.getNumberOfPlayers(), strategy)));
         }
 
         return new Ladder(ladder);
     }
 
-    private static List<Boolean> createOneLine(int numberOfPlayer) {
+    private static List<Boolean> createOneLine(int numberOfPlayer, LadderCreatorStrategy strategy) {
         List<Boolean> points = new ArrayList<>();
         boolean horizonFlag = false;
 
         for (int i = 0; i < numberOfPlayer; i++) {
-            horizonFlag = createHorizonFlag(i, numberOfPlayer, horizonFlag);
+            horizonFlag = createHorizonFlag(i, numberOfPlayer, horizonFlag, strategy);
             points.add(horizonFlag);
         }
 
         return points;
     }
 
-    private static boolean createHorizonFlag(int targetPoint, int numberOfPlayer, boolean prevHorizonFlag) {
+    private static boolean createHorizonFlag(int targetPoint, int numberOfPlayer, boolean prevHorizonFlag, LadderCreatorStrategy strategy) {
         if (prevHorizonFlag || targetPoint == numberOfPlayer - 1) {
             return false;
         }
 
-        return RandomBooleanGenerator.generate();
+        return strategy.generate();
     }
 }

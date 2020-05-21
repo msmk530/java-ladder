@@ -1,6 +1,7 @@
 package domain;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Line {
     private final List<Boolean> points;
@@ -9,12 +10,24 @@ public class Line {
         this.points = points;
     }
 
-    public Boolean checkHorizonFlag(int point){
+    public Boolean checkHorizonFlag(int point) {
         return points.get(point);
     }
 
-    public List<Boolean> getLine(){
+    public List<Boolean> getLine() {
         return points;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Line line = (Line) o;
+        return points.equals(line.points);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(points);
+    }
 }

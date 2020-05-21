@@ -2,6 +2,7 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Ladder {
     private static final int START_POINT = 0;
@@ -67,5 +68,18 @@ public class Ladder {
 
     public int getHeight() {
         return ladder.size();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ladder ladder1 = (Ladder) o;
+        return ladder.equals(ladder1.ladder);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ladder);
     }
 }
