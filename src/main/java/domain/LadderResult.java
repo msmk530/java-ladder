@@ -27,4 +27,8 @@ public class LadderResult {
 
         return result;
     }
+
+    public Map<String, Integer> getGameResult(){
+        return gameResult;
+    }
 }
