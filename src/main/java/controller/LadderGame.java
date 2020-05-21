@@ -16,5 +16,6 @@ public class LadderGame {
         OutputView.printLadder(playerRepository, ladder, resultItems);
 
         LadderResult ladderResult = new LadderResult(playerRepository, ladder);
+
     }
 }

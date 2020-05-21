@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -15,7 +16,7 @@ public class Line {
     }
 
     public List<Boolean> getLine() {
-        return points;
+        return Collections.unmodifiableList(points);
     }
 
     @Override
