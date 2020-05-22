@@ -24,7 +24,7 @@ class LadderTest {
 
     @Test
     void 생성자_테스트() {
-        Line line = new Line(Arrays.asList(true,false));
+        Line line = new Line(Arrays.asList(true, false));
         assertThat(ladder.getLine(0).equals(line)).isTrue();
     }
 

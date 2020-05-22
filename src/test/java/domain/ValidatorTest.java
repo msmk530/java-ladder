@@ -9,11 +9,9 @@ import org.junit.jupiter.api.Test;
 import util.ChangeStringToList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.junit.jupiter.api.Assertions.*;
 
 class ValidatorTest {
     private static final int NON_NATURAL_NUMBER = 0;
@@ -25,12 +23,12 @@ class ValidatorTest {
     }
 
     @Test
-    void 참가자_이름_중복_테스트(){
+    void 참가자_이름_중복_테스트() {
         List<Player> players = new ArrayList<>();
         players.add(new Player("kim"));
 
         assertThatExceptionOfType(DuplicateNameOfPlayerException.class)
-                .isThrownBy(()-> Validator.isUniquePlayer(players,new Player("kim")));
+                .isThrownBy(() -> Validator.isUniquePlayer(players, new Player("kim")));
     }
 
     @Test

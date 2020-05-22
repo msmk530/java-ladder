@@ -18,7 +18,6 @@ public class InputView {
     private static final String DEMAND_LADDER_HEIGHT = "최대 사다리 높이를 입력해주세요.";
     private static final String DEMAND_SEARCH_TARGET = "결과를 보고 싶은사람을 입력하시오.";
     private static final String ALL_RESULT = "all";
-
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static PlayerRepository inputPlayersName() {

@@ -9,9 +9,9 @@ import static org.assertj.core.api.Assertions.*;
 
 class ResultItemsTest {
     @Test
-    void 생성자_테스트(){
+    void 생성자_테스트() {
         List<String> items = ChangeStringToList.changeStringToList("kim,min,sub");
-        ResultItems resultItems = new ResultItems(items,3);
+        ResultItems resultItems = new ResultItems(items, 3);
 
         assertThat(resultItems.checkItems(items)).isTrue();
     }

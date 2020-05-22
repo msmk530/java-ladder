@@ -10,9 +10,9 @@ import static org.assertj.core.api.Assertions.*;
 
 class LadderResultTest {
     @Test
-    void 참가자와_아이템번호_매칭_테스트(){
+    void 참가자와_아이템번호_매칭_테스트() {
         PlayerRepository playerRepository = new PlayerRepository();
-        Line line = new Line(Arrays.asList(true,false));
+        Line line = new Line(Arrays.asList(true, false));
         List<Line> lines = new ArrayList<>();
 
         playerRepository.addPlayer(new Player("kim"));
@@ -21,10 +21,9 @@ class LadderResultTest {
 
         Ladder ladder = new Ladder(lines);
 
-        LadderResult ladderResult = new LadderResult(playerRepository,ladder);
+        LadderResult ladderResult = new LadderResult(playerRepository, ladder);
 
         assertThat(ladderResult.getGameResult().get("kim")).isEqualTo(1);
         assertThat(ladderResult.getGameResult().get("min")).isEqualTo(0);
     }
-
 }

@@ -1,7 +1,6 @@
 package domain;
 
 import org.junit.jupiter.api.Test;
-import util.RandomBooleanGenerator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +9,6 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.*;
 
 class LadderCreatorTest {
-
     @Test
     void 사다리_만들기_테스트() {
         Line line;

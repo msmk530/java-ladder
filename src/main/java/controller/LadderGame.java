@@ -23,7 +23,7 @@ public class LadderGame {
 
         do {
             searchName = InputView.inputSearchTarget(playerRepository);
-            OutputView.printTargetResult(searchName,ladderResult,resultItems);
+            OutputView.printTargetResult(searchName, ladderResult, resultItems);
         } while (!searchName.equals(ALL_RESULT));
     }
 }
