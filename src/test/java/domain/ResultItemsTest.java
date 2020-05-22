@@ -1,7 +1,5 @@
 package domain;
 
-import exception.Item.LengthOfItemException;
-import exception.Player.LengthOfNameException;
 import org.junit.jupiter.api.Test;
 import util.ChangeStringToList;
 
@@ -17,5 +15,4 @@ class ResultItemsTest {
 
         assertThat(resultItems.checkItems(items)).isTrue();
     }
-
 }

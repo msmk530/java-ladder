@@ -13,7 +13,7 @@ public class ResultItems {
     }
 
     public boolean checkItems(List<String> target) {
-        return items.equals(target);
+        return items.containsAll(target);
     }
 
     public List<String> getItems() {

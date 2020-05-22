@@ -29,19 +29,15 @@ class LineTest {
 
     @Test
     void 해당_포인트에서_수평선_있는경우() {
-        //given
         int point = 0;
-        //when
+
         assertThat(line.checkHorizonFlag(point)).isTrue();
-        //then
     }
 
     @Test
     void 해당_포인트에서_수평선_없는경우() {
-        //given
         int point = 1;
-        //when
+
         assertThat(line.checkHorizonFlag(point)).isFalse();
-        //then
     }
 }
