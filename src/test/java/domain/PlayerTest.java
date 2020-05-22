@@ -38,4 +38,13 @@ class PlayerTest {
 
         assertThat(result.get("kim")).isEqualTo(500);
     }
+
+    @Test
+    void 리스트에_이름_추가_테스트() {
+        List<String> names = new ArrayList<>();
+
+        names.add(player.getName());
+
+        assertThat(names.get(0)).isEqualTo("kim");
+    }
 }
