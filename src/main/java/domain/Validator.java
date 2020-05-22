@@ -59,7 +59,7 @@ public class Validator {
         List<String> names = new ArrayList<>();
 
         for (Player player : playerRepository.getPlayers()) {
-            names.add(player.getName());
+            player.addName(names);
         }
 
         if (!names.contains(searchTarget)) {

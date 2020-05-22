@@ -17,6 +17,10 @@ public class Player {
         return result;
     }
 
+    public void addName(List<String> names) {
+        names.add(name);
+    }
+
     public String getName() {
         return name;
     }
