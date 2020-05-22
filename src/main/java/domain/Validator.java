@@ -26,10 +26,8 @@ public class Validator {
     }
 
     public static void isUniquePlayer(List<Player> players, Player player) {
-        for (Player addedPlayer : players) {
-            if (addedPlayer.equals(player)) {
-                throw new DuplicateNameOfPlayerException();
-            }
+        if (players.contains(player)) {
+            throw new DuplicateNameOfPlayerException();
         }
     }
 
