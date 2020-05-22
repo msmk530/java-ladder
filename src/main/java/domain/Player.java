@@ -12,7 +12,7 @@ public class Player {
         this.name = name;
     }
 
-    public Map<String, Integer> matchItem(Map<String, Integer> result, List<Integer> matchedItems, int point) {
+    public Map<String, Integer> matchItemNumbers(Map<String, Integer> result, List<Integer> matchedItems, int point) {
         result.put(name, matchedItems.get(point));
         return result;
     }

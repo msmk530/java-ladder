@@ -19,7 +19,7 @@ public class LadderResult {
         List<Player> players = playerRepository.getPlayers();
 
         for (Player player : players) {
-            result = player.matchItem(result, matchedItems, point);
+            result = player.matchItemNumbers(result, matchedItems, point);
             point++;
         }
 
