@@ -11,6 +11,10 @@ public class OutputView {
     private static final String SPACE = "     ";
     private static final String ALL_RESULT = "all";
 
+    private OutputView() {
+        throw new AssertionError();
+    }
+
     public static void printMessage(String message) {
         System.out.println(message);
     }
