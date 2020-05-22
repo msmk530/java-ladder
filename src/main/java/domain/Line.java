@@ -11,8 +11,12 @@ public class Line {
         this.points = points;
     }
 
-    public Boolean checkHorizonFlag(int point) {
+    public boolean checkHorizonFlag(int point) {
         return points.get(point);
+    }
+
+    public boolean checkLine(List<Boolean> checkLine) {
+        return points.containsAll(checkLine);
     }
 
     public List<Boolean> getLine() {

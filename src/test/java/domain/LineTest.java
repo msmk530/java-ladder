@@ -4,27 +4,24 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
 
 class LineTest {
     private Line line;
-    private List<Boolean> lineMembers;
 
     @BeforeEach
     void setUp() {
-        lineMembers = new ArrayList<>();
-
-        lineMembers.add(true);
-        lineMembers.add(false);
+        List<Boolean> lineMembers = Arrays.asList(true, false);
 
         line = new Line(lineMembers);
     }
 
     @Test
     void 생성자_테스트() {
-        assertThat(line.getLine().containsAll(lineMembers)).isTrue();
+        assertThat(line.checkLine(Arrays.asList(true, false))).isTrue();
     }
 
     @Test
