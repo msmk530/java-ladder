@@ -1,6 +1,5 @@
 package domain;
 
-import exception.Player.LengthOfNameException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +27,7 @@ class PlayerTest {
 
         matchedItems.add(500);
 
-        Map<String, Integer> result = player.matchItemNumbers(gameResult, matchedItems, 0);
+        Map<String, Integer> result = player.createPlayerResult(gameResult, matchedItems, 0);
 
         assertThat(result.get("kim")).isEqualTo(500);
     }

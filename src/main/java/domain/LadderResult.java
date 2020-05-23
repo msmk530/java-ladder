@@ -10,16 +10,16 @@ public class LadderResult {
     public LadderResult(PlayerRepository playerRepository, Ladder ladder) {
         List<Integer> matchedItems = ladder.playLadderGame(playerRepository);
 
-        this.gameResult = matchPlayerToItem(playerRepository, matchedItems);
+        this.gameResult = createGameResult(playerRepository, matchedItems);
     }
 
-    private Map<String, Integer> matchPlayerToItem(PlayerRepository playerRepository, List<Integer> matchedItems) {
+    private Map<String, Integer> createGameResult(PlayerRepository playerRepository, List<Integer> matchedItems) {
         int point = START_POINT;
         Map<String, Integer> result = new LinkedHashMap<>();
         List<Player> players = playerRepository.getPlayers();
 
         for (Player player : players) {
-            result = player.matchItemNumbers(result, matchedItems, point);
+            result = player.createPlayerResult(result, matchedItems, point);
             point++;
         }
 
