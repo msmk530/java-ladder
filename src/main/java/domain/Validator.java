@@ -14,6 +14,7 @@ public class Validator {
     private static final int MAX_LENGTH_OF_NAME = 5;
     private static final int MIN_LENGTH_OF_NAME = 1;
     private static final int MIN_LENGTH_OF_ITEM = 1;
+    private static final int MIN_HEIGHT_OF_LADDER = 1;
 
     private Validator() {
         throw new AssertionError();
@@ -48,7 +49,7 @@ public class Validator {
     }
 
     public static void isValidHeight(int height) {
-        if (height < 1) {
+        if (height < MIN_HEIGHT_OF_LADDER) {
             throw new LengthOfHeightException();
         }
     }
