@@ -50,11 +50,13 @@ public class OutputView {
 
         for (int i = 0; i < line.getLine().size(); i++) {
             System.out.print(VERTICAL_LINE);
+
             if (!line.getLine().get(i)) {
                 System.out.print(SPACE);
-            } else {
-                System.out.print(HORIZON_LINE);
+                continue;
             }
+
+            System.out.print(HORIZON_LINE);
         }
     }
 
@@ -69,12 +71,13 @@ public class OutputView {
     public static void printTargetResult(String searchName, LadderResult ladderResult, ResultItems resultItems) {
         if (searchName.equals(ALL_RESULT)) {
             printAllResult(ladderResult, resultItems);
-        } else {
-            Map<String, Integer> result = ladderResult.getGameResult();
-            int resultItemNumber = result.get(searchName);
-
-            System.out.println(searchName + " : " + resultItems.getItems().get(resultItemNumber));
+            return;
         }
+
+        Map<String, Integer> result = ladderResult.getGameResult();
+        int resultItemNumber = result.get(searchName);
+
+        System.out.println(searchName + " : " + resultItems.getItems().get(resultItemNumber));
     }
 
     private static void printAllResult(LadderResult ladderResult, ResultItems resultItems) {
