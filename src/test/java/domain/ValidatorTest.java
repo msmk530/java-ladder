@@ -23,6 +23,12 @@ class ValidatorTest {
     }
 
     @Test
+    void 참가자_이름_1글자_미만시_예외발생_테스트() {
+        assertThatExceptionOfType(LengthOfNameException.class)
+                .isThrownBy(() -> Validator.isValidName(""));
+    }
+
+    @Test
     void 참가자_이름_중복_테스트() {
         List<Player> players = new ArrayList<>();
         players.add(new Player("kim"));
