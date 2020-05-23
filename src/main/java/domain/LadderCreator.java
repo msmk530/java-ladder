@@ -31,10 +31,14 @@ public class LadderCreator {
     }
 
     private static boolean createHorizonFlag(int targetPoint, int numberOfPlayer, boolean prevHorizonFlag, LadderCreatorStrategy strategy) {
-        if (prevHorizonFlag || targetPoint == numberOfPlayer - 1) {
+        if (prevHorizonFlag || isEnd(targetPoint, numberOfPlayer)) {
             return false;
         }
 
         return strategy.generate();
+    }
+
+    private static boolean isEnd(int targetPoint, int numberOfPlayer) {
+        return targetPoint == numberOfPlayer - 1;
     }
 }
