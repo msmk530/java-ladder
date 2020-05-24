@@ -35,6 +35,6 @@ class LadderTest {
         playerRepository.addPlayer(new Player("one"));
         playerRepository.addPlayer(new Player("two"));
 
-        assertThat(LadderCreator.createLadder(playerRepository, 1, () -> true)).isEqualTo(ladder);
+        assertThat(ladder.goDown(0)).isEqualTo(1);
     }
 }
