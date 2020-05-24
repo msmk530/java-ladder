@@ -13,18 +13,7 @@ public class Ladder {
         this.ladder = ladder;
     }
 
-    public List<Integer> playLadderGame(PlayerRepository playerRepository) {
-        List<Integer> resultItemNumbers = new ArrayList<>();
-
-        for (int point = 0; point < playerRepository.getNumberOfPlayers(); point++) {
-            int resultAtPoint = goDown(point);
-            resultItemNumbers.add(resultAtPoint);
-        }
-
-        return resultItemNumbers;
-    }
-
-    private int goDown(int point) {
+    public int goDown(int point) {
         int itemNumber = point;
 
         for (int i = 0; i < ladder.size(); i++) {

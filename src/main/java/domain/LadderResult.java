@@ -8,9 +8,20 @@ public class LadderResult {
     private final Map<String, Integer> gameResult;
 
     public LadderResult(PlayerRepository playerRepository, Ladder ladder) {
-        List<Integer> matchedItems = ladder.playLadderGame(playerRepository);
+        List<Integer> matchedItems = playLadderGame(playerRepository, ladder);
 
         this.gameResult = createGameResult(playerRepository, matchedItems);
+    }
+
+    private List<Integer> playLadderGame(PlayerRepository playerRepository, Ladder ladder) {
+        List<Integer> resultItemNumbers = new ArrayList<>();
+
+        for (int point = 0; point < playerRepository.getNumberOfPlayers(); point++) {
+            int resultAtPoint = ladder.goDown(point);
+            resultItemNumbers.add(resultAtPoint);
+        }
+
+        return resultItemNumbers;
     }
 
     private Map<String, Integer> createGameResult(PlayerRepository playerRepository, List<Integer> matchedItems) {
