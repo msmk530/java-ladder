@@ -8,6 +8,7 @@ public class LadderCreator {
         throw new AssertionError();
     }
 
+//    public static Ladder createLadder(PlayerRepository playerRepository, int ladderHeight, LadderCreatorStrategy strategy) {
     public static Ladder createLadder(PlayerRepository playerRepository, int ladderHeight, LadderCreatorStrategy strategy) {
         List<Line> ladder = new ArrayList<>();
 

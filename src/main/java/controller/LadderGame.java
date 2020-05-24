@@ -1,7 +1,6 @@
 package controller;
 
 import domain.*;
-import util.RandomBooleanGenerator;
 import view.InputView;
 import view.OutputView;
 
@@ -13,7 +12,7 @@ public class LadderGame {
         ResultItems resultItems = InputView.inputResultItems(playerRepository.getNumberOfPlayers());
         int ladderHeight = InputView.inputLadderHeight();
 
-        Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight, RandomBooleanGenerator::generate);
+        Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight, new RandomBooleanStrategy());
 
         OutputView.printLadder(playerRepository, ladder, resultItems);
 
