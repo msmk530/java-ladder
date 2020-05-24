@@ -3,6 +3,7 @@ package domain;
 import exception.Item.CountOfItemsException;
 import exception.Item.LengthOfItemException;
 import exception.Ladder.LengthOfHeightException;
+import exception.Ladder.SearchTargetException;
 import exception.Player.DuplicateNameOfPlayerException;
 import exception.Player.LengthOfNameException;
 import org.junit.jupiter.api.Test;
@@ -55,5 +56,15 @@ class ValidatorTest {
     void 사다리_높이_예외발생_테스트() {
         assertThatExceptionOfType(LengthOfHeightException.class)
                 .isThrownBy(() -> Validator.isValidHeight(NON_NATURAL_NUMBER));
+    }
+
+    @Test
+    void 해당_이름의_참가자가_있는지_테스트() {
+        PlayerRepository playerRepository = new PlayerRepository();
+
+        playerRepository.addPlayer(new Player("kim"));
+
+        assertThatExceptionOfType(SearchTargetException.class)
+                .isThrownBy(() -> Validator.isValidSearchTarget("min", playerRepository));
     }
 }
