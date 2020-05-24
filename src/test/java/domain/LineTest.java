@@ -19,11 +19,6 @@ class LineTest {
     }
 
     @Test
-    void 생성자_테스트() {
-        assertThat(line.checkLine(Arrays.asList(true, false))).isTrue();
-    }
-
-    @Test
     void 해당_포인트에서_수평선_있는경우() {
         int point = 0;
 

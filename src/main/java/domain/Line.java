@@ -15,10 +15,6 @@ public class Line {
         return points.get(point);
     }
 
-    public boolean checkLine(List<Boolean> checkLine) {
-        return points.containsAll(checkLine);
-    }
-
     public List<Boolean> getLine() {
         return Collections.unmodifiableList(points);
     }
