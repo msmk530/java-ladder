@@ -16,7 +16,7 @@ public class LadderGame {
 
         OutputView.printLadder(playerRepository, ladder, resultItems);
 
-        LadderResult ladderResult = new LadderResult(playerRepository, ladder);
+        LadderResult ladderResult = LadderGameProgressService.progress(playerRepository, ladder);
 
         String searchName;
 
