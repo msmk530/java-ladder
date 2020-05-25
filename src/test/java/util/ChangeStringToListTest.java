@@ -15,6 +15,6 @@ class ChangeStringToListTest {
 
         List<String> names = ChangeStringToList.changeStringToList(changeTarget);
 
-        assertThat(names.equals(compareTarget)).isTrue();
+        assertThat(names).isEqualTo(compareTarget);
     }
 }
