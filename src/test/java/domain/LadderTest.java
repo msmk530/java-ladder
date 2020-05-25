@@ -35,6 +35,11 @@ class LadderTest {
         playerRepository.addPlayer(new Player("one"));
         playerRepository.addPlayer(new Player("two"));
 
+        assertThat(LadderCreator.createLadder(playerRepository, 1, () -> true)).isEqualTo(ladder);
+    }
+
+    @Test
+    void 사다리_진행시_매칭아이템번호_반환_테스트() {
         assertThat(ladder.goDown(0)).isEqualTo(1);
     }
 }

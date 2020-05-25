@@ -12,7 +12,7 @@ public class LadderGame {
         ResultItems resultItems = InputView.inputResultItems(playerRepository.getNumberOfPlayers());
         int ladderHeight = InputView.inputLadderHeight();
 
-        Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight, new RandomBooleanStrategy());
+        Ladder ladder = LadderCreator.createLadder(playerRepository, ladderHeight, new RandomCreatorStrategy());
 
         OutputView.printLadder(playerRepository, ladder, resultItems);
 

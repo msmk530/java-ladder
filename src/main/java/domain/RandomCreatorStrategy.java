@@ -2,7 +2,7 @@ package domain;
 
 import util.RandomBooleanGenerator;
 
-public class RandomBooleanStrategy implements LadderCreatorStrategy {
+public class RandomCreatorStrategy implements LadderCreatorStrategy {
     @Override
     public boolean generate() {
         return RandomBooleanGenerator.generate();
