@@ -37,7 +37,7 @@ public class Validator {
             throw new CountOfItemsException();
         }
 
-        items.forEach((item) -> checkItemLength(item));
+        items.forEach(Validator::checkItemLength);
     }
 
     private static void checkItemLength(String item) {
